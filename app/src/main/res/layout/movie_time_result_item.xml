@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.weiren.zhang.lib_common.util.DateUtils" />
+
+        <variable
+            name="model"
+            type="com.weiren.zhang.movie_kotlin.model.movieinfomain.MovieTimeResultModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#f3f3f3"
+        app:cardElevation="8dp"
+        android:layout_margin="12dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/theater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5sp"
+                android:textSize="18sp"
+                android:textColor="@color/_434eae"
+                android:text="@{model.theater}"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

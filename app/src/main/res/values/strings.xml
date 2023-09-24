@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Kotlin_Movie</string>
+    <string name="app_version">v%s</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="home_movie_information">電影資料</string>
+    <string name="home_synopsis">劇情簡介</string>
+    <string name="home_play_time">播放時間</string>
+    <string name="home_trailer">預告片</string>
+    <string name="home_movie">電影</string>
+    <string name="home_theater">電影院</string>
+    <string name="home_exit_tips">再按一次退出程序</string>
+
+    <string name="daily_search_empty_icon">&#xe608;</string>
+    <string name="daily_search_empty_text">暫時無資訊</string>
+    <string name="daily_loading_text">載入中…</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_daily"
+        android:icon="@drawable/ic_baseline_movie_filter_24"
+        android:title="@string/home_movie" />
+    <item
+        android:id="@+id/item_discover"
+        android:icon="@drawable/ic_baseline_local_movies_24"
+        android:title="@string/home_theater" />
+</menu>

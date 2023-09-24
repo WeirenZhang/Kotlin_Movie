@@ -1,0 +1,29 @@
+apply from: "../common_module_config.gradle"
+apply from: "../arouter.gradle"
+
+def androidx = rootProject.ext.androidx
+def thirdDependencies = rootProject.ext.dependencies
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //配置通用依赖项
+    androidx.each { k, v ->
+        if (k.contains("junit")) {
+            testImplementation v
+        } else if (k.contains("espresso")) {
+            androidTestImplementation v
+        } else if (k.contains("compiler")) {
+            kapt v
+        } else {
+            api v
+        }
+    }
+
+    thirdDependencies.each { k, v ->
+        if (k.contains("compiler") && !k.startsWith("arouter")) {
+            kapt v
+        } else if (!k.contains("dokitx") && !k.contains("compiler")) {
+            api v
+        }
+    }
+}
