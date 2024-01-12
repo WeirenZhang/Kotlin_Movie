@@ -12,6 +12,7 @@ import com.weiren.zhang.lib_common.constant.BaseConstant
 import com.weiren.zhang.lib_common.ext.toJson
 import com.weiren.zhang.lib_common.router.RouterPath
 import com.weiren.zhang.movie_kotlin.R
+import com.weiren.zhang.movie_kotlin.adapter.TypesItemAdapter
 import com.weiren.zhang.movie_kotlin.databinding.MovieTimeResultItemBinding
 import com.weiren.zhang.movie_kotlin.model.movieinfomain.MovieTimeResultModel
 import com.weiren.zhang.movie_kotlin.model.theaterlist.TheaterInfoModel
@@ -29,7 +30,7 @@ class MovieTimeResultAdapter(private val mActivity: Activity) :
                 itemData.id,
                 itemData.theater,
                 "",
-                itemData.tel,
+                "",
             )
             ARouter.getInstance().build(RouterPath.Theater.PATH_TheaterResult_HOME)
                 .withString(BaseConstant.Theater_ID_KEY, toJson(theaterInfoModel))
@@ -61,7 +62,7 @@ class MovieTimeResultAdapter(private val mActivity: Activity) :
 
         // Create sub item view adapter
 
-        val typesItemAdapter = TypesItemAdapter()
+        val typesItemAdapter = TypesItemAdapter(3)
         typesItemAdapter.setList(item.types)
 
         if (binding != null) {

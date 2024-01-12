@@ -24,7 +24,7 @@ class MovieIntheatersListActivity :
     }
 
     override fun initView() {
-        actionbar!!.title = "上映中"
+        actionbar!!.title = "現正熱映"
         mBind.mRecyclerView.layoutManager = LinearLayoutManager(this)
         mBind.mSwipeRefreshLayout.setOnRefreshListener {
             lazyLoadData()
@@ -38,7 +38,8 @@ class MovieIntheatersListActivity :
     }
 
     override fun initData() {
-        getMovieList()
+        //getMovieList()
+        lazyLoadData()
     }
 
     private fun lazyLoadData() {

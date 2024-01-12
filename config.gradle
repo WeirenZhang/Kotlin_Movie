@@ -7,8 +7,8 @@ ext {
             minSdkVersion    : 24,
             targetSdkVersion : 33,
             applicationId    : "com.weiren.zhang.movie_kotlin",
-            versionCode      : 3,
-            versionName      : "1.0.3",
+            versionCode      : 4,
+            versionName      : "1.0.4",
     ]
 
     androidx = [

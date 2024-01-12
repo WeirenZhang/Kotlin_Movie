@@ -13,7 +13,8 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        mConfigurator.withWebApiHost("https://movies.yahoo.com.tw/").configure()
+        //mConfigurator.withWebApiHost("https://movies.yahoo.com.tw/").configure()
+        mConfigurator.withWebApiHost("https://script.google.com/").configure()
     }
 
 }

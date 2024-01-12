@@ -7,13 +7,12 @@
 
         <variable
             name="model"
-            type="com.weiren.zhang.movie_kotlin.model.movieinfomain.TypesModel" />
+            type="com.weiren.zhang.movie_kotlin.model.TypesModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView

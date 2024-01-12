@@ -1,10 +1,10 @@
 package com.weiren.zhang.movie_kotlin.fragment.movieinfomain
 
-import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -20,7 +20,7 @@ import com.weiren.zhang.lib_common.ext.toJson
 import com.weiren.zhang.lib_common.router.RouterPath
 import com.weiren.zhang.movie_kotlin.R
 import com.weiren.zhang.movie_kotlin.databinding.MovieTimeTabsFragmentBinding
-import com.weiren.zhang.movie_kotlin.model.movieinfomain.MovieTimeTabItemModel
+import com.weiren.zhang.movie_kotlin.model.movieinfomain.MovieDateTabItemModel
 import com.weiren.zhang.movie_kotlin.model.movielist.MovieListModel
 import com.weiren.zhang.movie_kotlin.viewmodel.movieinfomain.MovieTimeResultViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,9 +36,6 @@ class MovieTimeTabsFragment :
     @JvmField
     @Autowired(name = BaseConstant.Movie_ID_KEY)
     var movieModelJSON: String = ""
-
-    var pickerDialog: OnDateSetListener? = null
-    var calendar = Calendar.getInstance() //用來做date
 
     private val mLoadingDialog: LoadingDailog by lazy {
         LoadingDailog.Builder(mActivity)
@@ -56,60 +53,33 @@ class MovieTimeTabsFragment :
     override fun initView() {
         ARouter.getInstance().inject(this)
         movieListModel = fromJson(movieModelJSON)
-
-        binding.date.setOnClickListener {
-            //建立date的dialog
-            val dialog = DatePickerDialog(
-                mActivity,
-                pickerDialog,
-                calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH)
-            )
-
-            val c = Calendar.getInstance()
-            dialog.datePicker.minDate = c.timeInMillis
-            c.add(Calendar.DAY_OF_MONTH, 9)
-            dialog.datePicker.maxDate = c.timeInMillis
-            dialog.show()
-        }
-
-        pickerDialog =
-            OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                calendar.set(Calendar.YEAR, year)
-                calendar.set(Calendar.MONTH, monthOfYear)
-                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-
-                val myFormat = "yyyy-MM-dd" // mention the format you need
-                val sdf = SimpleDateFormat(myFormat, Locale.TAIWAN)
-
-                println(sdf.format(calendar.time))
-                binding.date.text = sdf.format(calendar.time)
-
-                mViewModel.getMovieTimeResult(movieListModel.movie_id, sdf.format(calendar.time))
-                    .observerKt {
-                        if (it.isNotEmpty()) {
-                            initTabInfo(it)
-                            binding.mEmptyLL.isVisible = false
-                        } else {
-                            initTabInfo(it)
-                            binding.mEmptyLL.isVisible = true
-                        }
-                    }
-            }
     }
 
     override fun lazyLoadData() {
-        val date = Date();
-        val f1 = SimpleDateFormat("yyyy-MM-dd")
-        val s2 = f1.format(date)
-        binding.date.text = s2
-        mViewModel.getMovieTimeResult(movieListModel.movie_id, s2).observerKt {
+
+        mViewModel.getMovieDateResult(movieListModel.id).observerKt {
             if (it.isNotEmpty()) {
-                initTabInfo(it)
+                initTabInfo(it, 0)
+
+                // setup the alert builder
+                val builder = AlertDialog.Builder(mActivity)
+                builder.setTitle("選擇日期")
+
+                // add a list
+                val list = it.mapTo(arrayListOf()) { it.date }
+                val cs: Array<CharSequence> = list.toArray(arrayOfNulls<CharSequence>(list.size))
+                builder.setItems(cs) { dialog, which ->
+                    initTabInfo(it, which)
+                }
+
+                // create and show the alert dialog
+                val dialog = builder.create()
+                binding.date.setOnClickListener {
+                    dialog.show()
+                }
+
                 binding.mEmptyLL.isVisible = false
             } else {
-                initTabInfo(it)
                 binding.mEmptyLL.isVisible = true
             }
         }
@@ -123,9 +93,11 @@ class MovieTimeTabsFragment :
         mLoadingDialog.dismiss()
     }
 
-    private fun initTabInfo(tabInfo: List<MovieTimeTabItemModel>) {
+    private fun initTabInfo(tabInfo: List<MovieDateTabItemModel>, which: Int) {
         val fragmentList = mutableListOf<Fragment>()
-        tabInfo.forEach { data ->
+        binding.date.text = tabInfo[which].date
+
+        tabInfo[which].list.forEach { data ->
             binding.mTabLayout.addTab(binding.mTabLayout.newTab())
             fragmentList.add(MovieTimeResultFragment.newInstance(toJson(data)))
         }
@@ -137,8 +109,7 @@ class MovieTimeTabsFragment :
         TabLayoutMediator(
             binding.mTabLayout, binding.mViewPager
         ) { tab, position ->
-            tab.text = tabInfo[position].area
+            tab.text = tabInfo[which].list[position].area
         }.attach()
     }
-
 }

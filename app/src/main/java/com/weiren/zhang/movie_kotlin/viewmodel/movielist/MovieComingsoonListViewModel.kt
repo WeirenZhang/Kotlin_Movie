@@ -20,6 +20,15 @@ constructor(private val mDailyApi: MovieListApi) : BaseViewModel() {
                 Page = 1
             }
             val movieListModels = mutableListOf<MovieListModel>()
+            val dailyModel = mDailyApi.getMovieList(Page.toString(), "MovieList", "1")
+            if (dailyModel.size > 0) {
+                Page += 1
+                for (element in dailyModel) {
+                    movieListModels.add(element)
+                }
+            }
+            /*
+            val movieListModels = mutableListOf<MovieListModel>()
             val dailyModel = mDailyApi.getMovieComingsoonList(Page.toString())
             val stringResponse = dailyModel.body()?.string()
             val doc = Jsoup.parse(stringResponse);
@@ -48,6 +57,7 @@ constructor(private val mDailyApi: MovieListApi) : BaseViewModel() {
                     movieListModels.add(movieListModel)
                 }
             }
+            */
             movieListModels
         }
 }

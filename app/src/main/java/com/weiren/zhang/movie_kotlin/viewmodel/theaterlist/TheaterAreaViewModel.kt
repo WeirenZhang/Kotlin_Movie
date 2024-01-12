@@ -17,7 +17,13 @@ constructor(private val mDailyApi: TheaterListApi) : BaseViewModel() {
     fun getAreaList(): LiveData<List<TheaterAreaModel>> =
         liveDataEx {
             val theaterareaModels = mutableListOf<TheaterAreaModel>()
-            val dailyModel = mDailyApi.getTheaterList()
+            val dailyModel = mDailyApi.getTheaterList("Area")
+            if (dailyModel.size > 0) {
+                for (element in dailyModel) {
+                    theaterareaModels.add(element)
+                }
+            }
+            /*
             val stringResponse = dailyModel.body()?.string()
             val doc = Jsoup.parse(stringResponse);
             val elements = doc.select(".theater_content");
@@ -55,6 +61,7 @@ constructor(private val mDailyApi: TheaterListApi) : BaseViewModel() {
                     theaterareaModels.add(theaterareaModel)
                 }
             }
+            */
             theaterareaModels
         }
 }

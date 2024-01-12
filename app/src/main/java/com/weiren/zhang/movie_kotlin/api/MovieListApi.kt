@@ -1,17 +1,13 @@
 package com.weiren.zhang.movie_kotlin.api
 
-import okhttp3.ResponseBody
-import retrofit2.Response
+import com.weiren.zhang.movie_kotlin.model.movielist.MovieListModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface MovieListApi {
-    @GET("movie_thisweek.html")
-    suspend fun getMovieThisweekList(@Query("page") page: String): Response<ResponseBody>
+    //@GET("macros/s/AKfycbwwB2Ke85PFeQqt2P9BRZFOxWif6JI4_ImblPyfFlP-VTJLkJJ6sZkCMD4tPhF_g8yT/exec")
+    //suspend fun getMovieList(@Query("page") page: String): Response<ResponseBody>
 
-    @GET("movie_intheaters.html")
-    suspend fun getMovieIntheatersList(@Query("page") page: String): Response<ResponseBody>
-
-    @GET("movie_comingsoon.html")
-    suspend fun getMovieComingsoonList(@Query("page") page: String): Response<ResponseBody>
+    @GET("macros/s/AKfycbwwB2Ke85PFeQqt2P9BRZFOxWif6JI4_ImblPyfFlP-VTJLkJJ6sZkCMD4tPhF_g8yT/exec")
+    suspend fun getMovieList(@Query("page") page: String, @Query("type") type: String, @Query("tab") tab: String): List<MovieListModel>
 }

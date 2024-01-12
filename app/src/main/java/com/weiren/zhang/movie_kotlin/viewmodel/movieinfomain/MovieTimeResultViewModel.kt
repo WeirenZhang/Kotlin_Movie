@@ -15,9 +15,16 @@ import javax.inject.Inject
 class MovieTimeResultViewModel @Inject
 constructor(private val mDailyApi: MovieInfoMainApi) : BaseViewModel() {
 
-    fun getMovieTimeResult(id: String, date: String): LiveData<List<MovieTimeTabItemModel>> =
+    fun getMovieDateResult(id: String): LiveData<List<MovieDateTabItemModel>> =
         liveDataEx {
-            val movieTimeTabItemModels = mutableListOf<MovieTimeTabItemModel>()
+            val movieDateTabItemModels = mutableListOf<MovieDateTabItemModel>()
+            val dailyModel = mDailyApi.getMovieDateResult(id, "MovieTime")
+            if (dailyModel.size > 0) {
+                for (element in dailyModel) {
+                    movieDateTabItemModels.add(element)
+                }
+            }
+            /*
             val dailyModel = mDailyApi.getMovieTimeResult(id, date, "", "", "", "")
             val doc = Jsoup.parse(dailyModel.view);
             val elements = doc.select("div.area_timebox");
@@ -84,7 +91,8 @@ constructor(private val mDailyApi: MovieInfoMainApi) : BaseViewModel() {
                     movieTimeTabItemModels.add(movieTimeTabItemModel)
                 }
             }
-            movieTimeTabItemModels
+            */
+            movieDateTabItemModels
         }
 }
 

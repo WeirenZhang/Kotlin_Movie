@@ -27,10 +27,10 @@
                 android:id="@+id/release_foto"
                 android:layout_width="100dp"
                 android:layout_height="142dp"
+                app:imageUrl="@{model.release_foto}"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_max="wrap"
-                app:imageUrl="@{model.release_foto}" />
+                app:layout_constraintWidth_max="wrap" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/theaterlist_name"
@@ -64,10 +64,20 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_10"
+                app:imageUrl="@{model.icon}"
                 app:layout_constraintLeft_toRightOf="@id/release_foto"
-                app:layout_constraintTop_toBottomOf="@id/en"
-                app:imageUrl="@{model.icon}" />
+                app:layout_constraintTop_toBottomOf="@id/en" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/types"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintLeft_toRightOf="@id/release_foto"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/icon" />
+            <!--
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/types"
                 android:layout_width="0dp"
@@ -87,7 +97,7 @@
                 app:layout_constraintLeft_toRightOf="@id/release_foto"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/types" />
-
+            -->
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

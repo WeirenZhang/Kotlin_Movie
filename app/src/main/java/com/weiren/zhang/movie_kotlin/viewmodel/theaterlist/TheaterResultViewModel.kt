@@ -6,6 +6,7 @@ import com.weiren.zhang.movie_kotlin.api.TheaterListApi
 import com.weiren.zhang.movie_kotlin.model.theaterlist.TheaterResultModel
 import com.weiren.zhang.movie_kotlin.model.TimeModel
 import com.weiren.zhang.movie_kotlin.model.TypeModel
+import com.weiren.zhang.movie_kotlin.model.theaterlist.TheaterDateItemModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
@@ -15,10 +16,16 @@ import javax.inject.Inject
 class TheaterResultViewModel @Inject
 constructor(private val mDailyApi: TheaterListApi) : BaseViewModel() {
 
-    fun getTheaterResultList(id: String): LiveData<List<TheaterResultModel>> =
+    fun getTheaterResultList(id: String): LiveData<List<TheaterDateItemModel>> =
         liveDataEx {
-            val movieListModels = mutableListOf<TheaterResultModel>()
-            val dailyModel = mDailyApi.getTheaterResultList(id)
+            val movieListModels = mutableListOf<TheaterDateItemModel>()
+            val dailyModel = mDailyApi.getTheaterResultList(id, "TheaterResult")
+            if (dailyModel.size > 0) {
+                for (element in dailyModel) {
+                    movieListModels.add(element)
+                }
+            }
+            /*
             val stringResponse = dailyModel.body()?.string()
             val doc = Jsoup.parse(stringResponse);
             val elements = doc.select(".release_list>li");
@@ -76,6 +83,7 @@ constructor(private val mDailyApi: TheaterListApi) : BaseViewModel() {
                     movieListModels.add(movieListModel)
                 }
             }
+            */
             movieListModels
         }
 }

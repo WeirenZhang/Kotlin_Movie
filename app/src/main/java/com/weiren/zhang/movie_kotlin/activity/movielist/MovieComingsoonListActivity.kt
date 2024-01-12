@@ -38,7 +38,8 @@ class MovieComingsoonListActivity :
     }
 
     override fun initData() {
-        getMovieList()
+        //getMovieList()
+        lazyLoadData()
     }
 
     private fun lazyLoadData() {

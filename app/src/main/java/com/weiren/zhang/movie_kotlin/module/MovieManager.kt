@@ -23,11 +23,11 @@ object MovieManager {
                 fromJson(movieJson!!, object : TypeToken<MutableList<MovieListModel>>() {}.type)
 
             if (!videoList.any {
-                    it.movie_id == data.movie_id
+                    it.id == data.id
                 }) {
                 videoList.add(data)
             } else {
-                Toast.makeText(context, data.release_movie_name + " 已加入我的最愛", Toast.LENGTH_LONG)
+                Toast.makeText(context, data.title + " 已加入我的最愛", Toast.LENGTH_LONG)
                     .show()
             }
             toJson(videoList)

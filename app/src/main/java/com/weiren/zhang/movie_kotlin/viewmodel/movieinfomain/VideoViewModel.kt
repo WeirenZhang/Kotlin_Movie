@@ -15,7 +15,13 @@ constructor(private val mDailyApi: MovieInfoMainApi) : BaseViewModel() {
     fun getVideo(id: String): LiveData<List<VideoModel>> =
         liveDataEx {
             val videoModels = mutableListOf<VideoModel>()
-            val dailyModel = mDailyApi.getMovieInfo(id)
+            val dailyModel = mDailyApi.getVideo(id, "Video")
+            if (dailyModel.size > 0) {
+                for (element in dailyModel) {
+                    videoModels.add(element)
+                }
+            }
+            /*
             val stringResponse = dailyModel.body()?.string()
             val doc = Jsoup.parse(stringResponse);
             val have_arbox = doc.select("div.have_arbox");
@@ -42,6 +48,7 @@ constructor(private val mDailyApi: MovieInfoMainApi) : BaseViewModel() {
                     }
                 }
             }
+            */
             videoModels
         }
 }

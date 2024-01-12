@@ -35,10 +35,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.movielist.MovieThisweekListActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.movieinfomain.MovieInfoMainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

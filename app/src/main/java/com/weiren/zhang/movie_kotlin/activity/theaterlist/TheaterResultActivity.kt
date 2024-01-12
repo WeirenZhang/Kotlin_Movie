@@ -2,27 +2,29 @@ package com.weiren.zhang.movie_kotlin.activity.theaterlist;
 
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.android.tu.loadingdialog.LoadingDailog
 import com.weiren.zhang.lib_common.base.activity.BaseBindVMActivity
 import com.weiren.zhang.lib_common.constant.BaseConstant
 import com.weiren.zhang.lib_common.ext.fromJson
 import com.weiren.zhang.lib_common.router.RouterPath
 import com.weiren.zhang.movie_kotlin.R
 import com.weiren.zhang.movie_kotlin.adapter.theaterlist.TheaterResultAdapter
-import com.weiren.zhang.movie_kotlin.databinding.RecyclerviewBinding
+import com.weiren.zhang.movie_kotlin.databinding.Recyclerview1Binding
+import com.weiren.zhang.movie_kotlin.model.theaterlist.TheaterDateItemModel
 import com.weiren.zhang.movie_kotlin.model.theaterlist.TheaterInfoModel
 import com.weiren.zhang.movie_kotlin.module.TheaterManager
 import com.weiren.zhang.movie_kotlin.viewmodel.theaterlist.TheaterResultViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 @Route(path = RouterPath.Theater.PATH_TheaterResult_HOME)
-class TheaterResultActivity : BaseBindVMActivity<TheaterResultViewModel, RecyclerviewBinding>() {
+class TheaterResultActivity : BaseBindVMActivity<TheaterResultViewModel, Recyclerview1Binding>() {
 
     private val mAdapter by lazy { TheaterResultAdapter(this) }
 
@@ -30,9 +32,15 @@ class TheaterResultActivity : BaseBindVMActivity<TheaterResultViewModel, Recycle
     @Autowired(name = BaseConstant.Theater_ID_KEY)
     var theaterInfoModelJSON: String = ""
 
+    private val mLoadingDialog: LoadingDailog by lazy {
+        LoadingDailog.Builder(this)
+            .setMessage(getString(R.string.daily_loading_text))
+            .create()
+    }
+
     private lateinit var theaterInfoModel: TheaterInfoModel
 
-    override fun getViewBinding() = RecyclerviewBinding.inflate(layoutInflater)
+    override fun getViewBinding() = Recyclerview1Binding.inflate(layoutInflater)
 
     override fun initWindow() {
 
@@ -60,11 +68,7 @@ class TheaterResultActivity : BaseBindVMActivity<TheaterResultViewModel, Recycle
 
     override fun initView() {
         mBind.mRecyclerView.layoutManager = LinearLayoutManager(this)
-        mBind.mSwipeRefreshLayout.setOnRefreshListener {
-            lazyLoadData()
-        }
         mBind.mRecyclerView.adapter = mAdapter
-        mBind.mSwipeRefreshLayout.isRefreshing = true
     }
 
     override fun initData() {
@@ -77,8 +81,25 @@ class TheaterResultActivity : BaseBindVMActivity<TheaterResultViewModel, Recycle
     private fun lazyLoadData() {
         mViewModel.getTheaterResultList(theaterInfoModel.id).observerKt {
             if (it.isNotEmpty()) {
-                mAdapter.setList(mutableListOf())
-                mAdapter.addData(it)
+                initTheaterResult(it, 0)
+
+                // setup the alert builder
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("選擇日期")
+
+                // add a list
+                val list = it.mapTo(arrayListOf()) { it.date }
+                val cs: Array<CharSequence> = list.toArray(arrayOfNulls<CharSequence>(list.size))
+                builder.setItems(cs) { dialog, which ->
+                    initTheaterResult(it, which)
+                }
+
+                // create and show the alert dialog
+                val dialog = builder.create()
+                mBind.date.setOnClickListener {
+                    dialog.show()
+                }
+
                 mBind.mEmptyLL.isVisible = false
             } else {
                 mBind.mEmptyLL.isVisible = true
@@ -86,8 +107,18 @@ class TheaterResultActivity : BaseBindVMActivity<TheaterResultViewModel, Recycle
         }
     }
 
+    private fun initTheaterResult(data: List<TheaterDateItemModel>, which: Int) {
+        mBind.date.text = data[which].date
+        mAdapter.setList(mutableListOf())
+        mAdapter.addData(data[which].data)
+    }
+
+    override fun showLoading() {
+        mLoadingDialog.show()
+    }
+
     override fun hideLoading() {
-        mBind.mSwipeRefreshLayout.isRefreshing = false
+        mLoadingDialog.dismiss()
     }
 
     override fun handlerError() {

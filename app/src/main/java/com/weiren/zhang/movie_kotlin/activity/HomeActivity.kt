@@ -20,14 +20,13 @@ class HomeActivity : BaseBindActivity<ActivityMainBinding>() {
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 
     private val image = intArrayOf(
-        R.drawable.enl_2,
-        R.drawable.enl_4,
         R.drawable.enl_1,
+        R.drawable.enl_4,
         R.drawable.enl_5,
         R.drawable.enl_3,
         R.drawable.enl_6
     )
-    private val imgText = arrayOf("本周新片", "上映中", "即將上映", "電影院", "我的最愛", "網路訂票")
+    private val imgText = arrayOf("現正熱映", "即將上映", "電影院", "我的最愛", "網路訂票")
 
     override fun initView() {
         //actionbar
@@ -61,17 +60,15 @@ class HomeActivity : BaseBindActivity<ActivityMainBinding>() {
             AdapterView.OnItemClickListener { _, _, position, _ ->
                 //Toast.makeText(this@HomeActivity, "你選擇了" + imgText[position], Toast.LENGTH_SHORT).show()
                 when (position) {
-                    0 -> ARouter.getInstance().build(RouterPath.MovieList.PATH_ThisWeek_HOME)
+                    0 -> ARouter.getInstance().build(RouterPath.MovieList.PATH_InTheaters_HOME)
                         .navigation();
-                    1 -> ARouter.getInstance().build(RouterPath.MovieList.PATH_InTheaters_HOME)
+                    1 -> ARouter.getInstance().build(RouterPath.MovieList.PATH_ComIngSoon_HOME)
                         .navigation();
-                    2 -> ARouter.getInstance().build(RouterPath.MovieList.PATH_ComIngSoon_HOME)
+                    2 -> ARouter.getInstance().build(RouterPath.Theater.PATH_Area_HOME)
                         .navigation();
-                    3 -> ARouter.getInstance().build(RouterPath.Theater.PATH_Area_HOME)
+                    3 -> ARouter.getInstance().build(RouterPath.MyFavourite.PATH_MyFavourite_HOME)
                         .navigation();
-                    4 -> ARouter.getInstance().build(RouterPath.MyFavourite.PATH_MyFavourite_HOME)
-                        .navigation();
-                    5 -> ARouter.getInstance().build(RouterPath.WebView.PATH_WebView_HOME)
+                    4 -> ARouter.getInstance().build(RouterPath.WebView.PATH_WebView_HOME)
                         .withString(BaseConstant.Video_ID_KEY, toJson(videoModel))
                         .navigation();
                 }

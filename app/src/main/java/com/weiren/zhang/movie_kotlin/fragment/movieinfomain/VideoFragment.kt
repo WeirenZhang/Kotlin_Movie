@@ -52,7 +52,7 @@ class VideoFragment : BaseBindVMFragment<VideoViewModel, RecyclerviewBinding>() 
     }
 
     override fun lazyLoadData() {
-        mViewModel.getVideo(movieListModel.movie_id).observerKt {
+        mViewModel.getVideo(movieListModel.id).observerKt {
             if (it.isNotEmpty()) {
                 mAdapter.setList(mutableListOf())
                 mAdapter.addData(it)

@@ -73,7 +73,7 @@ class MovieInfoMainActivity :
         val id = item.getItemId()
 
         if (id == R.id.myfavourite) {
-            println(movieListModel.release_movie_name)
+            println(movieListModel.title)
             MovieManager.addMovieRecord(this, movieListModel)
             return true
         }
@@ -89,7 +89,7 @@ class MovieInfoMainActivity :
         //set actionbar title
         ARouter.getInstance().inject(this)
         movieListModel = fromJson(movieModelJSON)
-        actionbar!!.title = movieListModel.release_movie_name
+        actionbar!!.title = movieListModel.title
 
         mViewModel.getSelected().observerKt { index ->
             switchFragment(index)

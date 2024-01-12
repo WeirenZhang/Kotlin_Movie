@@ -14,11 +14,11 @@ fun bindImage(imageView: ImageView, url: String) {
 }
 
 data class MovieListModel(
-    val release_movie_name: String,
+    val title: String,
     val en: String,
     val release_movie_time: String,
-    val img: String,
-    var movie_id: String
+    val thumb: String,
+    var id: String
 )
 
 

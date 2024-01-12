@@ -15,7 +15,14 @@ constructor(private val mDailyApi: MovieInfoMainApi) : BaseViewModel() {
     fun getMovieInfo(id: String): LiveData<List<MovieInfoModel>> =
         liveDataEx {
             val movieInfoModels = mutableListOf<MovieInfoModel>()
-            val dailyModel = mDailyApi.getMovieInfo(id)
+            val dailyModel = mDailyApi.getMovieInfo(id, "MovieInfo")
+            if (dailyModel.size > 0) {
+                for (element in dailyModel) {
+                    movieInfoModels.add(element)
+                }
+            }
+
+            /*
             val stringResponse = dailyModel.body()?.string()
             val doc = Jsoup.parse(stringResponse);
             val h1 = doc.select("div.movie_intro_info_r > h1").text();
@@ -76,6 +83,7 @@ constructor(private val mDailyApi: MovieInfoMainApi) : BaseViewModel() {
                 actor
             )
             movieInfoModels.add(movieInfoModel)
+            */
             movieInfoModels
         }
 }

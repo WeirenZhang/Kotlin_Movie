@@ -19,7 +19,7 @@ class MovieListAdapter(private val mActivity: Activity) :
     init {
         setOnItemClickListener { adapter, view, position ->
             val itemData = data[position]
-            println(itemData.release_movie_name)
+            println(itemData.title)
             ARouter.getInstance().build(RouterPath.MovieInfoMain.PATH_MovieInfoMain_HOME)
                 .withString(BaseConstant.Movie_ID_KEY, toJson(itemData))
                 //.withBoolean(BaseConstant.VIDEO_IS_FROM_RELATE_KEY, false)

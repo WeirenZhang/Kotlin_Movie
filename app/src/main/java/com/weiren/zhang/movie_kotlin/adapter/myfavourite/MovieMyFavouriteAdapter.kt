@@ -32,7 +32,7 @@ class MovieMyFavouriteAdapter(private val mActivity: Activity, listener: EventLi
             if (view.id == R.id.delete) {
                 AlertDialog.Builder(mActivity)
                     .setTitle("提示")
-                    .setMessage("您確定要刪除 " + itemData.release_movie_name + " 嗎?")
+                    .setMessage("您確定要刪除 " + itemData.title + " 嗎?")
                     .setPositiveButton("删除") { p0, p1 ->
                         MovieManager.removeMovieRecord(itemData)
                         data.removeAt(position)
@@ -50,7 +50,7 @@ class MovieMyFavouriteAdapter(private val mActivity: Activity, listener: EventLi
         }
         setOnItemClickListener { adapter, view, position ->
             val itemData = data[position]
-            println(itemData.release_movie_name)
+            println(itemData.title)
 
             ARouter.getInstance().build(RouterPath.MovieInfoMain.PATH_MovieInfoMain_HOME)
                 .withString(BaseConstant.Movie_ID_KEY, toJson(itemData))
