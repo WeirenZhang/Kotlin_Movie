@@ -12,21 +12,19 @@ ReactNative版： [ReactNative_Movie](https://github.com/WeirenZhang/ReactNative
 
 |電影資料|劇情簡介|播放時間|
 |:---:|:---:|:---:|
-|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.46.915.png)|
-![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.52.594.png)|
-![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.59.603.png)
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.46.915.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.52.594.png)|![]
+(https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.59.603.png)
 
 |預告片|地區|電影院|
 |:---:|:---:|:---:|
-|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.26.08.61.png)|
-![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.55.827.png)|
-![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.00.267.png)
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.26.08.61.png)|![]
+(https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.55.827.png)|![]
+(https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.00.267.png)
 
 |播放時間|我的最愛|網路訂票|
 |:---:|:---:|:---:|
-|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.11.954.png)|
-![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.22.211.png)|
-![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.34.682.png)
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.11.954.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.22.211.png)|![]
+(https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.34.682.png)
 
 # 在 Google Play 上取得
 <a href="https://play.google.com/store/apps/details?id=com.weiren.zhang.movie_react_native" target="_blank">
