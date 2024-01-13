@@ -7,9 +7,8 @@ ReactNative版： [ReactNative_Movie](https://github.com/WeirenZhang/ReactNative
 
 |首頁|現正熱映|即將上映|
 |:---:|:---:|:---:|
-|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.30.637.png)|
-![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.38.603.png)|
-![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.47.387.png)
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.30.637.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.38.603.png)|![]
+(https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.47.387.png)
 
 |電影資料|劇情簡介|播放時間|
 |:---:|:---:|:---:|
