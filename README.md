@@ -1,4 +1,4 @@
-# ReactNative_Movie
+# Kotlin_Movie
 Java版：[Java_Movie](https://github.com/WeirenZhang/Java_Movie)<br /><br />
 Flutter版：[Flutter_Movie](https://github.com/WeirenZhang/Flutter_Movie)<br /><br />
 ReactNative版： [ReactNative_Movie](https://github.com/WeirenZhang/ReactNative_Movie)<br /><br />
@@ -27,7 +27,7 @@ ReactNative版： [ReactNative_Movie](https://github.com/WeirenZhang/ReactNative
 (https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.34.682.png)
 
 # 在 Google Play 上取得
-<a href="https://play.google.com/store/apps/details?id=com.weiren.zhang.movie_react_native" target="_blank">
+<a href="https://play.google.com/store/apps/details?id=com.weiren.zhang.movie_kotlin" target="_blank">
     <img
         alt="Get it on Google Play"
         src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
