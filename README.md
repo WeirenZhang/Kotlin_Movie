@@ -1,4 +1,5 @@
 # Kotlin_Movie
+一款基于 Kotlin + Jetpack + Coroutines 的電影時刻表 App。
 Java版：[Java_Movie](https://github.com/WeirenZhang/Java_Movie)<br /><br />
 Flutter版：[Flutter_Movie](https://github.com/WeirenZhang/Flutter_Movie)<br /><br />
 ReactNative版： [ReactNative_Movie](https://github.com/WeirenZhang/ReactNative_Movie)<br /><br />
