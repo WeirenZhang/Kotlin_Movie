@@ -15,8 +15,7 @@ ReactNative版： [ReactNative_Movie](https://github.com/WeirenZhang/ReactNative
 
 |預告片|地區|電影院|
 |:---:|:---:|:---:|
-|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.26.08.61.png)|![]
-(https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.55.827.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.00.267.png)
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.26.08.61.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.24.55.827.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_23.25.00.267.png)
 
 |播放時間|我的最愛|網路訂票|
 |:---:|:---:|:---:|
