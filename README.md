@@ -15,13 +15,21 @@ Flutter版：[Flutter_Movie](https://github.com/WeirenZhang/Flutter_Movie)<br />
 |:---:|:---:|:---:|
 |![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/4.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/5.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/6.png)
 
-|預告片|地區|電影院|
+|電影資料|劇情簡介|播放時間|
 |:---:|:---:|:---:|
-|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.49.14.871.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.49.34.96.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.49.40.696.png)
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/7.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/8.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/9.png)
 
-|播放時間|我的最愛|網路訂票|
+|預告片|預告片|地區|
 |:---:|:---:|:---:|
-|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.49.59.983.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.50.10.992.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-13_19.13.38.721.png)
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/10.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/11.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/12.png)
+
+|電影院|播放時間|我的最愛|
+|:---:|:---:|:---:|
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/13.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/14.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/15.png)
+
+|我的最愛|網路訂票|
+|:---:|:---:|:---:|
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/16.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/17.png)
 
 # 在 Google Play 上取得
 <a href="https://play.google.com/store/apps/details?id=com.weiren.zhang.movie_kotlin" target="_blank">
