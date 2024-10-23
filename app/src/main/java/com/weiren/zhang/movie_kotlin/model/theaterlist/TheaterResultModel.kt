@@ -11,7 +11,7 @@ data class TheaterResultModel(
     val id: String,
     val release_foto: String,
     val theaterlist_name: String,
-    val en: String,
+    val length: String,
     var icon: String,
     val types: List<TypesModel>
 )

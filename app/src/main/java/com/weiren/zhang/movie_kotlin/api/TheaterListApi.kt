@@ -12,12 +12,12 @@ interface TheaterListApi {
     //@GET("theater_list.html")
     //suspend fun getTheaterList(): Response<ResponseBody>
 
-    @GET("macros/s/AKfycbwwB2Ke85PFeQqt2P9BRZFOxWif6JI4_ImblPyfFlP-VTJLkJJ6sZkCMD4tPhF_g8yT/exec")
+    @GET("macros/s/AKfycbzNPN95_VIeYPTKF85yVS5oml_lUiVL0TUlQvuNj1krEUjUQFtBq_BY6eraap6zW2ZI/exec")
     suspend fun getTheaterList(@Query("type") type: String): List<TheaterAreaModel>
 
     //@GET("theater_result.html/id={id}")
     //suspend fun getTheaterResultList(@Path("id") id: String): Response<ResponseBody>
 
-    @GET("macros/s/AKfycbwwB2Ke85PFeQqt2P9BRZFOxWif6JI4_ImblPyfFlP-VTJLkJJ6sZkCMD4tPhF_g8yT/exec")
+    @GET("macros/s/AKfycbzNPN95_VIeYPTKF85yVS5oml_lUiVL0TUlQvuNj1krEUjUQFtBq_BY6eraap6zW2ZI/exec")
     suspend fun getTheaterResultList(@Query("cinema_id") id: String, @Query("type") type: String): List<TheaterDateItemModel>
 }

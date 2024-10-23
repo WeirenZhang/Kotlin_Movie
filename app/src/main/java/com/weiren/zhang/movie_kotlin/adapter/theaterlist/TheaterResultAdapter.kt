@@ -30,7 +30,7 @@ class TheaterResultAdapter(private val mActivity: Activity) :
 
             val movieListModel = MovieListModel(
                 itemData.theaterlist_name,
-                itemData.en,
+                itemData.length,
                 "",
                 itemData.release_foto,
                 itemData.id

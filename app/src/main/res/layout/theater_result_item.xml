@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_10"
-                android:text="@{model.en}"
+                android:text="@{model.length}"
                 android:textColor="@color/common_sub_title_color"
                 android:textSize="@dimen/sp_14"
                 app:layout_constraintLeft_toRightOf="@id/release_foto"

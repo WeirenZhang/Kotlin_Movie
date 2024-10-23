@@ -7,9 +7,7 @@ object RouterPath {
 
     class MovieList {
         companion object {
-            const val PATH_ThisWeek_HOME = "/movielist/thisweek"
-            const val PATH_InTheaters_HOME = "/movielist/intheaters"
-            const val PATH_ComIngSoon_HOME = "/movielist/comingsoon"
+            const val PATH_MovieList_HOME = "/movielist/movielist"
         }
     }
 
