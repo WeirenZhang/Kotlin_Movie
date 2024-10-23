@@ -1,4 +1,9 @@
 # Kotlin_Movie
+一款基於 TypeScript + MVVM + Dva (React-Router + Redux + Redux-Saga) 的電影時刻表 App 完整項目。<br /><br />
+Java版：[Java_Movie](https://github.com/WeirenZhang/Java_Movie)<br /><br />
+Kotlin版： [Kotlin_Movie](https://github.com/WeirenZhang/Kotlin_Movie)<br /><br />
+Flutter版：[Flutter_Movie](https://github.com/WeirenZhang/Flutter_Movie)<br /><br />
+喜歡的話希望給個 Star 或 Fork ^_^ ，謝謝<br /><br />
 
 # 專案截圖
 
@@ -19,7 +24,7 @@
 |![](https://github.com/WeirenZhang/ReactNative_Movie/blob/main/Screen/screenshot-2024-01-12_13.49.59.983.png)|![](https://github.com/WeirenZhang/ReactNative_Movie/blob/main/Screen/screenshot-2024-01-12_13.50.10.992.png)|![](https://github.com/WeirenZhang/ReactNative_Movie/blob/main/Screen/screenshot-2024-01-13_19.13.38.721.png)
 
 # 在 Google Play 上取得
-<a href="https://play.google.com/store/apps/details?id=com.weiren.zhang.movie_kotlin" target="_blank">
+<a href="https://play.google.com/store/apps/details?id=com.weiren.zhang.movie_react_native" target="_blank">
     <img
         alt="Get it on Google Play"
         src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
@@ -57,5 +62,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 
