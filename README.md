@@ -1,19 +1,19 @@
 # Kotlin_Movie
 一款基於 Kotlin + MVVM + Jetpack + Coroutines 的電影時刻表 App 完整項目。<br /><br />
 Java版：[Java_Movie](https://github.com/WeirenZhang/Java_Movie)<br /><br />
-ReactNative版： [Kotlin_Movie](https://github.com/WeirenZhang/ReactNative_Movie)<br /><br />
+ReactNative版： [ReactNative_Movie](https://github.com/WeirenZhang/ReactNative_Movie)<br /><br />
 Flutter版：[Flutter_Movie](https://github.com/WeirenZhang/Flutter_Movie)<br /><br />
 喜歡的話希望給個 Star 或 Fork ^_^ ，謝謝<br /><br />
 
 # 專案截圖
 
-|首頁|現正熱映|即將上映|
+|首頁|本周新片|本期首輪|
 |:---:|:---:|:---:|
-|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/1.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.48.41.879.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.49.25.352.png)
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/1.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/2.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/3.png)
 
-|電影資料|劇情簡介|播放時間|
+|本期二輪|近期上映|新片快報|
 |:---:|:---:|:---:|
-|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.48.51.703.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.48.58.272.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/screenshot-2024-01-12_13.49.07.879.png)
+|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/4.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/5.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/6.png)
 
 |預告片|地區|電影院|
 |:---:|:---:|:---:|
