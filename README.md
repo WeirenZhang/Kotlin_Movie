@@ -28,7 +28,7 @@ Flutter版：[Flutter_Movie](https://github.com/WeirenZhang/Flutter_Movie)<br />
 |![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/13.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/14.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/15.png)
 
 |我的最愛|網路訂票|
-|:---:|:---:|:---:|
+|:---:|:---:|
 |![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/16.png)|![](https://github.com/WeirenZhang/Kotlin_Movie/blob/main/Screen/17.png)
 
 # 在 Google Play 上取得
